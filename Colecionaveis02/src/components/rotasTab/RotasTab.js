@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Perfil from '../../views/Perfil/Perfil';
 import Colecao from '../../views/Colecao/Colecao';
 import RotasDrawer from '../rotasDrawer/RotasDrawer';
+import { MaterialIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,9 +18,37 @@ const RotasTab = () => {
       }
       }
     >
-      <Tab.Screen name="Inicial" component={RotasDrawer} />
-      <Tab.Screen name="Colecao" component={Colecao} />
-      <Tab.Screen name="Perfil" component={Perfil} />
+     <Tab.Screen
+     name="Inicial"
+     component={RotasDrawer}
+     options={{
+         unmountOnBlur: true,
+         tabBarLabel: 'Inicial',
+         tabBarIcon: ({ color}) => (
+             <MaterialIcons name="home" size={24} color={color} />
+         ),
+     }}
+     />
+     <Tab.Screen
+     name="Colecao"
+     component={Colecao}
+     options={{
+         tabBarLabel: 'Coleção',
+         tabBarIcon: ({ color}) => (
+             <MaterialIcons name="storage" size={24} color={color} />
+         ),
+     }}
+     />
+    <Tab.Screen
+     name="Perfil"
+     component={Perfil}
+     options={{
+         tabBarLabel: 'Perfil',
+         tabBarIcon: ({ color}) => (
+             <MaterialIcons name="person" size={24} color={color} />
+         ),
+     }}
+     />
     </Tab.Navigator>
   );
 }
