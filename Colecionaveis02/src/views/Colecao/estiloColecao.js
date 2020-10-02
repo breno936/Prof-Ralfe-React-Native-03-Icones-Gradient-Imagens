@@ -12,7 +12,7 @@ const estiloColecao = StyleSheet.create({
        justifyContent: 'space-between',
        padding: 5,
    },
-   textp: {
+   texto: {
        fontSize: 18,
        color: '#FFFFFF',
    },
